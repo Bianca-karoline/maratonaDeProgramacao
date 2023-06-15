@@ -1,0 +1,99 @@
+package maratona;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		/*String frase = new String();
+		
+		frase =  sc.next();
+		int c = 0;
+		for(int i=0;i<frase.length();i++) {
+			if(frase.charAt(i) == 'a') {
+				c++;
+			}
+			if(frase.charAt(i) == 'e') {
+				c++;
+			}
+			if(frase.charAt(i) == 'i') {
+				c++;
+			}
+			if(frase.charAt(i) == 'o') {
+				c++;
+			}if(frase.charAt(i) == 'u') {
+				c++;
+			}
+		}
+		System.out.println(c);
+		*/
+		/*String frase = new String();
+		frase = sc.next();
+		String frase2 = frase;
+		int j = 0;
+		boolean passou = true;
+		for(int i = frase.length()-1;i>=0;i--) {
+			if(frase.charAt(i) == frase2.charAt(j)) {
+				j++;
+			}else {
+				passou = false;
+				break;
+			}
+		}
+		if(passou) {
+			System.out.println("É um palindromo");
+		}else {
+			System.out.println("Não é um palindromo");
+		}*/
+		int t = 0;
+		ArrayList<Integer> n = new ArrayList<>();
+		ArrayList<Integer> n2 = new ArrayList<>();
+		int[] num = {1,2,5,4,9,6};
+		int[] par= new int[6];
+		int[] impar= new int[6];
+		int index = 0;
+			for(int i = 0; i<6;i++) {
+				if(num[i]%2==0) {
+					par[t] = num[i];
+				}else {
+					impar[t] = num[i];
+					
+			}
+			
+		t++;
+		
+		}
+			int temp = 0;
+			n.add(par[0]);
+		for(int i = 0; i<par.length;i++) {
+			
+			if(n.indexOf(index)>par[i]) {
+				n.add(index, par[i]);
+			}else if(par[i]!=0){
+				n.add(par[i]);
+			}
+		}
+		n.remove(0);
+		n2.add(par[0]);
+		
+		for(int i = 0; i<par.length;i++) {
+			
+			if(n2.indexOf(index)>impar[i]) {
+				n2.add(index, impar[i]);
+			}else if(impar[i]!=0){
+				n2.add(impar[i]);
+			}
+		}
+		n2.remove(0);
+		for(Integer x:n) {
+			System.out.println("Par: "+ x);
+		}
+		for(Integer x:n2) {
+			System.out.println("Impar: "+ x);
+		}
+		
+		
+		sc.close();
+	}
+}
